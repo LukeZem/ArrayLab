@@ -6,7 +6,7 @@ const checkForEven = (arr) => {
     arr.forEach((element, index) => {
         if (element % 2 === 0) {
             allOdd = false;
-            arr.splice(index, 1, element+1) //if number is even plus 1 to make odd
+            arr.splice(index, 1, element + 1) //if number is even plus 1 to make odd
         }
     });
     return allOdd;
@@ -41,9 +41,49 @@ const clacAvgTemp = (arr) => {
             largestNum = element;
         }
     });
-    let avgTemp = total/count;
+    let avgTemp = total / count;
 
     return "Average temp is: " + avgTemp + " Highest temp is: " + largestNum;
 }
 
 console.log(clacAvgTemp(fahrenheitTemps));
+
+//3 -------------------------------------------------------------------
+
+const fruits = ["Apple", "Banana", "Orange", "Grapes", "Mango"];
+
+const findFavFruit = (Array) => {
+
+    let foundFruit = false;
+
+    Array.forEach(element => {
+
+        if (element === "kiwi") {
+            foundFruit = true;
+        }
+    });
+    if (!foundFruit) {
+        Array.push("Kiwi");
+    }
+}
+
+findFavFruit(fruits)
+console.log(fruits)
+
+//4 -------------------------------------------------------------------
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October"];
+
+const shortenNames = () => {
+    months.forEach((element,index) => {
+        months[index] = element.slice(0,3);
+    });
+}
+shortenNames(months);
+console.log(months);
+
+
+//5 -------------------------------------------------------------------
+const mixedData = [42, 'hello', true, 3.14, 'world', false, null, undefined, 'goodbye', 7];
+
+const onlyStrings = mixedData.filter(item => (typeof item === "string"));
+console.log(onlyStrings);
